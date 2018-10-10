@@ -5,8 +5,8 @@ services:
     image: dius/pact-broker
     ports:
       - "8888:80"
-#    volumes:
-#      - ./components/pact-broker/pact_broker.sqlite:/tmp/pact_broker.sqlite
+    volumes:
+      - ./components/pact-broker/pact_broker.sqlite:/tmp/pact_broker.sqlite
     environment:
       - PACT_BROKER_DATABASE_ADAPTER=sqlite
       - PACT_BROKER_DATABASE_NAME=/tmp/pact_broker.sqlite
