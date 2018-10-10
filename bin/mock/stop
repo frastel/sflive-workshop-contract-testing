@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose -f bin/mock/docker-compose-mocked.yml down

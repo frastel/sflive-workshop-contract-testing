@@ -1,0 +1,45 @@
+# this file should actually be stored in the root directory
+# but for "hiding" the mock functionality it is stored in this mock folder
+version: '3'
+services:
+
+  pact-broker:
+    image: dius/pact-broker
+    ports:
+      - "8888:80"
+#    volumes:
+#      - ./components/pact-broker/pact_broker.sqlite:/tmp/pact_broker.sqlite
+    environment:
+      - PACT_BROKER_DATABASE_ADAPTER=sqlite
+      - PACT_BROKER_DATABASE_NAME=/tmp/pact_broker.sqlite
+
+  frontend:
+    build: ./../../components/moby-dick
+    ports:
+      - "8080:80"
+    volumes:
+      - ./../../components/frontend:/code
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      - SYMFONY_PHPUNIT_VERSION=7.1
+
+  mocker:
+    build: ./../../components/mocker
+    volumes:
+      - ./../../components/mocker:/code
+
+  user:
+    image: pactfoundation/pact-mock-service
+    ports:
+      - "8082:80"
+
+  recipe-search:
+    image: pactfoundation/pact-mock-service
+    ports:
+      - "8083:80"
+
+  recipe-detail:
+    image: pactfoundation/pact-mock-service
+    ports:
+      - "8084:80"

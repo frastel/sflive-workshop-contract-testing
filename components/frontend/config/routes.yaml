@@ -1,0 +1,15 @@
+homepage:
+    path: /
+    controller: App\Controller\HomeController::index
+
+recipe:
+    path: /recipes/{id}
+    controller: App\Controller\RecipeDetailController::detail
+
+user:
+    path: /users/{id}
+    controller: App\Controller\UserController::detail
+
+search:
+    path: /search
+    controller: App\Controller\SearchController::index

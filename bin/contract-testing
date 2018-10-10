@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# frontend: consumer tests
+echo "======================================================================"
+echo "===================== frontend: consumer tests ======================="
+echo "======================================================================"
+./bin/contracts/frontend-consumer-recipe-detail
+./bin/contracts/frontend-consumer-recipe-search
+./bin/contracts/frontend-consumer-user
+
+# recipe-detail: consumer tests
+echo "======================================================================"
+echo "===================== recipe-detail: consumer tests =================="
+echo "======================================================================"
+./bin/contracts/recipe-detail-consumer-recipe
+./bin/contracts/recipe-detail-consumer-user
+
+# recipe-detail: provider tests
+echo "======================================================================"
+echo "===================== recipe-detail: provider tests =================="
+echo "======================================================================"
+./bin/contracts/recipe-detail-provider
+
+# recipe: provider tests
+echo "======================================================================"
+echo "===================== recipe: provider tests ========================="
+echo "======================================================================"
+./bin/contracts/recipe-provider
+
+# user: provider tests
+echo "======================================================================"
+echo "===================== user: provider tests ==========================="
+echo "======================================================================"
+./bin/contracts/user-provider
+
+# recipe-search: provider tests
+echo "======================================================================"
+echo "===================== recipe-search: provider tests =================="
+echo "======================================================================"
+./bin/contracts/recipe-search-provider

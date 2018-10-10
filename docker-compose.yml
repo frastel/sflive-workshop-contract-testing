@@ -1,0 +1,67 @@
+version: '3'
+services:
+
+  pact-broker:
+    image: dius/pact-broker
+    ports:
+      - "8888:80"
+#    volumes:
+#      - ./components/pact-broker/pact_broker.sqlite:/tmp/pact_broker.sqlite
+    environment:
+      - PACT_BROKER_DATABASE_ADAPTER=sqlite
+      - PACT_BROKER_DATABASE_NAME=/tmp/pact_broker.sqlite
+
+  frontend:
+    build: ./components/moby-dick
+    ports:
+      - "8080:80"
+    volumes:
+      - ./components/frontend:/code
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      - SYMFONY_PHPUNIT_VERSION=7.1
+
+  recipe:
+    build: ./components/moby-dick
+    ports:
+      - "8081:80"
+    volumes:
+      - ./components/recipe:/code
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      - SYMFONY_PHPUNIT_VERSION=7.1
+
+  user:
+    build: ./components/moby-dick
+    ports:
+      - "8082:80"
+    volumes:
+      - ./components/user:/code
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      - SYMFONY_PHPUNIT_VERSION=7.1
+
+  recipe-search:
+    build: ./components/moby-dick
+    ports:
+      - "8083:80"
+    volumes:
+      - ./components/recipe-search:/code
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      - SYMFONY_PHPUNIT_VERSION=7.1
+
+  recipe-detail:
+    build: ./components/moby-dick
+    ports:
+      - "8084:80"
+    volumes:
+      - ./components/recipe-detail:/code
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    environment:
+      - SYMFONY_PHPUNIT_VERSION=7.1

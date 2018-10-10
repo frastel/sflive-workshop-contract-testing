@@ -1,0 +1,85 @@
+{
+  "description": "all found recipe data",
+  "provider_state": "searching for all recipes",
+  "request": {
+    "method": "GET",
+    "path": "/api",
+    "query": {
+      "limit": "5"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": [
+      {
+        "id": 1,
+        "title": "Spiegeleier",
+        "subtitle": "",
+        "rating": 4.5,
+        "instructions": "Eier in einer Pfanne aufschlagen und braten.",
+        "published": "2017-12-24 20:00:00",
+        "authorName": "Chefkoch",
+        "authorId": 1,
+        "preparationTime": 1,
+        "difficulty": "advanced",
+        "image": "spiegeleier.jpeg"
+      },
+      {
+        "id": 2,
+        "title": "Zuckerberg",
+        "subtitle": "Ein Haufen Zucker",
+        "rating": 4.5,
+        "instructions": "Zutaten vermengen, zu einem Berg anhäufen. Fertig! Viel Spaß damit!",
+        "published": "2017-12-24 20:00:00",
+        "authorName": "Internetz",
+        "authorId": 2,
+        "preparationTime": 1,
+        "difficulty": "simple",
+        "image": "zuckerberg.jpeg"
+      },
+      {
+        "id": 3,
+        "title": "Pangalaktischer Donnergurgler",
+        "subtitle": "Der stärkste Drink der Galaxis!",
+        "rating": 4.5,
+        "instructions": "Die Zutaten, außer der Grenadine, werden zusammen mit drei bis vier Eiswürfeln im Shaker geschüttelt, bis die Eiswürfel sich aufgelöst haben. Danach füllt man den Drink in eine Cocktailschale. Nach dem schälen der Pitahaya schneidet man das Fruchtfleisch in Pyramidenform. Die Pyramide gibt man ins Glas, bevor der Drink hineingeschüttet wird. Die Karambolenscheibe hängt man an den Glasrand. Über das Glas legt man zum Schluss eine Spirale aus der Orangenschale.",
+        "published": "2017-12-24 20:00:00",
+        "authorName": "Chefkoch",
+        "authorId": 1,
+        "preparationTime": 10,
+        "difficulty": "simple",
+        "image": "donnergurgler.jpeg"
+      },
+      {
+        "id": 11,
+        "title": "lorem recipe #1",
+        "subtitle": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ma",
+        "rating": 4.5,
+        "instructions": "Irgendwas mit den Zutaten machen ...",
+        "published": "2017-12-24 20:00:00",
+        "authorName": "Chefkoch",
+        "authorId": 1,
+        "preparationTime": 10,
+        "difficulty": "expert",
+        "image": ""
+      },
+      {
+        "id": 12,
+        "title": "lorem recipe #2",
+        "subtitle": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed",
+        "rating": 4.5,
+        "instructions": "Irgendwas mit den Zutaten machen ...",
+        "published": "2017-12-24 20:00:00",
+        "authorName": "Chefkoch",
+        "authorId": 1,
+        "preparationTime": 10,
+        "difficulty": "expert",
+        "image": ""
+      }
+    ]
+  }
+}
+

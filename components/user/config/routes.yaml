@@ -1,0 +1,3 @@
+user:
+    path: /api/users/{id}
+    controller: App\Controller\UserController::find

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+PACT_PROVIDER_NAME=recipe bin/phpunit \
+    --testsuite "Recipe Test Suite" \
+    --configuration phpunit.consumer.xml

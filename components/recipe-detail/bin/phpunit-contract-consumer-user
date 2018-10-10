@@ -1,0 +1,5 @@
+#!/bin/bash
+
+PACT_PROVIDER_NAME=user bin/phpunit \
+    --testsuite "User Test Suite" \
+    --configuration phpunit.consumer.xml

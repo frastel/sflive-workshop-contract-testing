@@ -1,0 +1,20 @@
+{
+  "recipe": {
+    "id": 1,
+    "title": "Spiegeleier",
+    "subtitle": "",
+    "rating": 4.5,
+    "instructions": "Eier in einer Pfanne aufschlagen und braten.",
+    "published": "2017-12-24 20:00:00",
+    "authorId": 1,
+    "preparationTime": 1,
+    "difficulty": "advanced",
+    "image": "spiegeleier.jpeg"
+  },
+  "author": {
+    "id": 1,
+    "name": "Chefkoch",
+    "about": "Chefkoch.de - Biggest cooking platform in Europe",
+    "registered": 1199178600
+  }
+}

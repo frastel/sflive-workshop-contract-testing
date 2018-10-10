@@ -1,0 +1,7 @@
+search:
+    path: /api
+    controller: App\Controller\SearchController::index
+
+alias:
+    path: /
+    controller: App\Controller\SearchController::index

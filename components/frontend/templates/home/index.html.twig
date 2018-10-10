@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Home of the demo application</h1>
+
+    <h2>Latest recipes</h2>
+    {% for recipe in recipes %}
+        <div class="recipe-short">
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <a href="{{ path('recipe', {"id": recipe.id}) }}">
+                        {% if recipe.image %}
+                            <img src="/images/recipes/{{ recipe.image }}" height="140" alt="{{ recipe.title }}"/>
+                        {% else %}
+
+                            <img src="/images/recipes/default.jpg" alt="{{ recipe.title }}"/>
+                        {% endif %}
+                    </a>
+                </div>
+                <div class="col-xs-8 col-md-8">
+                    <h3><a href="{{ path('recipe', {"id": recipe.id}) }}">{{ recipe.title }}</a></h3>
+
+                    <div class="meta">
+                        <ul>
+                            <li>Rating: {{ recipe.rating }}</li>
+                            <li>Published: {{ recipe.published|date('Y-m-d H:i') }}</li>
+                            <li>Author: <a
+                                        href="{{ path('user', {"id": recipe.authorId}) }}">{{ recipe.authorName }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        </div>
+    {% endfor %}
+{% endblock %}

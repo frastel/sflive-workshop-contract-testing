@@ -1,0 +1,3 @@
+recipe:
+    path: /api/recipes/{id}
+    controller: App\Controller\RecipeController::find

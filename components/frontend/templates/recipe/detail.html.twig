@@ -1,0 +1,75 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div>
+        <h1>{{ recipe.title }}</h1>
+        {% if recipe.subtitle %}
+            <h2>{{ recipe.subtitle }}</h2>
+        {% endif %}
+    </div>
+    <div>
+        {{ recipe.instructions|nl2br }}
+    </div>
+
+    <div>
+        <table class="recipe-info">
+            <tr>
+                <td class="print-label">Rating</td>
+                <td>{{ recipe.rating|round(1) }}</td>
+            </tr>
+            <tr>
+                <td class="print-label">Preparation time</td>
+                <td>{{ recipe.preparationTime }} minutes</td>
+            </tr>
+            {% if recipe.cookingTime %}
+                <tr>
+                    <td class="print-label">Cooking time</td>
+                    <td>{{ recipe.cookingTime }} minutes</td>
+                </tr>
+            {% endif %}
+            {% if recipe.restingTime %}
+                <tr>
+                    <td class="print-label">Resting time</td>
+                    <td>{{ recipe.restingTime }} minutes</td>
+                </tr>
+            {% endif %}
+            <tr>
+                <td class="print-label">Difficulty</td>
+                <td>{{ recipe.difficulty }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    <div>
+        <div>
+            {% if recipe.image %}
+                <img src="/images/recipes/{{ recipe.image }}" height="140" alt="{{ recipe.title }}"/>
+            {% else %}
+                <img src="http://lorempixel.com/210/140/food" alt="{{ recipe.title }}"/>
+            {% endif %}
+        </div>
+        <div>
+            <br />
+            <strong>Author</strong> <a href="{{ path('user', {'id': recipe.author.id}) }}">{{ recipe.author }}</a>
+        </div>
+        {#
+        <hr/>
+        <h3>Ingredients</h3>
+
+        <table class="ingredients">
+            {% for ingredient in recipe.ingredients %}
+                <tr class="ingredients">
+                    <td class="amount">{{ ingredient.amount }} {{ ingredient.unit }}</td>
+                    <td valign="top">{{ ingredient.name }}{% if ingredient.info %}, {{ ingredient.info }}{% endif %}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        #}
+    </div>
+
+    <div class="inner">
+        {{ parent() }}
+    </div>
+{% endblock %}

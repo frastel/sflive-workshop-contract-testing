@@ -1,0 +1,30 @@
+{
+  "description": "A get request to \/hello\/{name}",
+  "providerState": "Get Hello",
+  "request": {
+    "method": "GET",
+    "headers": {
+      "Content-Type": "application\/json"
+    },
+    "path": "\/hello\/Bob"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application\/json;charset=utf-8"
+    },
+    "body": {
+      "message": {
+        "data": {
+          "generate": "Hello, Bob",
+          "matcher": {
+            "json_class": "Regexp",
+            "o": 0,
+            "s": "(Hello, )[A-Za-z]"
+          }
+        },
+        "json_class": "Pact::Term"
+      }
+    }
+  }
+}

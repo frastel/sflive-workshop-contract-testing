@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cmd=${1:-install}
+app=${2:-frontend}
+
+shift
+shift
+
+what=$@
+
+docker run --rm -ti \
+    -w /code \
+    -v /etc/passwd:/etc/passwd:ro \
+    -v /etc/group:/etc/group:ro \
+    -v $(pwd)/components/${app}:/code \
+    -v $(pwd)/.composer:/composer \
+    -u $(id -u):$(id -g) \
+    composer:1.7.2 $cmd $what

@@ -1,0 +1,3 @@
+recipe-detail:
+    path: /api/recipe-details/{id}
+    controller: App\Controller\AggregationController::recipe

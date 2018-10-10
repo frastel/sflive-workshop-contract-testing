@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#-d
+docker-compose -f bin/mock/docker-compose-mocked.yml up  --force-recreate --build

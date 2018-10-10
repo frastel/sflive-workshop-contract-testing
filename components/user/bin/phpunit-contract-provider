@@ -1,0 +1,5 @@
+#!/bin/bash
+
+bin/phpunit \
+    --group contract-provider \
+    --configuration phpunit.xml.dist

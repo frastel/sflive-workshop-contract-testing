@@ -1,0 +1,77 @@
+/* styles are adopted from chefkoch.de */
+body {
+    color: #555;
+    font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+.container {
+    width: 970px !important;
+}
+
+#side{
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+#side h3{
+    margin-top: 0px;
+}
+
+#side .inner{
+    border-top: 1px solid #999999;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+
+.ingredients {
+    border-top: 1px solid #ddd;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+table.ingredients, table.recipe-info {
+    border-spacing: 0;
+    color: inherit;
+    font: inherit;
+}
+
+table.ingredients td {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+table.ingredients .amount {
+    width: 90px;
+    font-weight: bold;
+    text-align: right;
+}
+
+table.recipe-info {
+    margin-top: 25px;
+}
+
+table.recipe-info td {
+    padding-bottom: 4px;
+    padding-right: 10px;
+}
+
+table.recipe-info td.print-label {
+    font-weight: bold;
+    color: #000;
+    font-size: 100%;
+    line-height: normal;
+}
+
+.recipe-short h3{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+a {
+    color: #537A29
+}
+
+a:visited {
+    color: #9D9D9D
+}

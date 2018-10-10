@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose exec recipe-detail bin/phpunit-contract-consumer-user
