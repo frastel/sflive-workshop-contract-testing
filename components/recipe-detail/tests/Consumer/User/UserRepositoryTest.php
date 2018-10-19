@@ -36,6 +36,7 @@ class UserRepositoryTest extends TestCase
                     'id' => $matcher->integer(),
                     'name' => $matcher->like('Chefkoch'),
                     'about' => $matcher->like('text'),
+                    'registered' => $matcher->integer()
                 ]
             );
 
