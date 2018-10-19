@@ -3,4 +3,4 @@
 # workaround: file looses the mod sometimes
 chmod 666 components/pact-broker/pact_broker.sqlite
 
-docker-compose up -d --build
+docker-compose up -d --build --force-recreate
