@@ -3,6 +3,7 @@
 ## Installation
 
     vagrant up
+    vagrant ssh
     cd /vagrant
     ./bin/install
     

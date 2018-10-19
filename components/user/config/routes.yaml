@@ -1,3 +1,7 @@
 user:
     path: /api/users/{id}
     controller: App\Controller\UserController::find
+
+dev-provider-state:
+    path: /api/users/dev/provider-state
+    controller: App\Controller\DevController::providerState

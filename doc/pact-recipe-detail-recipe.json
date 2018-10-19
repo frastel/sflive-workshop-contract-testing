@@ -1,0 +1,76 @@
+{
+  "consumer": {
+    "name": "recipe-detail"
+  },
+  "provider": {
+    "name": "recipe"
+  },
+  "interactions": [
+    {
+      "description": "recipe data",
+      "providerState": "recipe with #1 exists",
+      "request": {
+        "method": "GET",
+        "path": "/api/recipes/1"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "id": 13,
+          "title": "Spiegeleier",
+          "subtitle": "Spiegeleier",
+          "rating": 4.5,
+          "instructions": "Eier in einer Pfanne aufschlagen und braten.",
+          "published": "2017-12-24 20:00:00",
+          "authorId": 1,
+          "preparationTime": 1,
+          "difficulty": "simple",
+          "image": "spiegeleier.jpeg"
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type"
+          },
+          "$.body.title": {
+            "match": "type"
+          },
+          "$.body.subtitle": {
+            "match": "type"
+          },
+          "$.body.rating": {
+            "match": "type"
+          },
+          "$.body.instructions": {
+            "match": "type"
+          },
+          "$.body.published": {
+            "match": "regex",
+            "regex": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}$"
+          },
+          "$.body.authorId": {
+            "match": "type"
+          },
+          "$.body.preparationTime": {
+            "match": "type"
+          },
+          "$.body.difficulty": {
+            "match": "regex",
+            "regex": "(simple|advanced|expert)"
+          },
+          "$.body.image": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "createdAt": "2018-10-10T13:06:50+00:00"
+}

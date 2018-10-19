@@ -34,6 +34,7 @@ class RecipeController
             'authorId' => 1,
             'preparationTime' => 1,
             'difficulty' => 'advanced',
+            'isDeleted' => false,
             'image' => 'spiegeleier.jpeg'
         ];
 
@@ -47,6 +48,7 @@ class RecipeController
             'authorId' => 2,
             'preparationTime' => 1,
             'difficulty' => 'simple',
+            'isDeleted' => false,
             'image' => 'zuckerberg.jpeg'
         ];
 
@@ -60,6 +62,7 @@ class RecipeController
             'authorId' => 1,
             'preparationTime' => 10,
             'difficulty' => 'simple',
+            'isDeleted' => false,
             'image' => 'donnergurgler.jpeg'
         ];
 
@@ -73,6 +76,7 @@ class RecipeController
                 'published' => '2017-12-24 20:00:00',
                 'authorId' => 1,
                 'preparationTime' => 10,
+                'isDeleted' => false,
                 'difficulty' => 'expert',
             ];
         }
