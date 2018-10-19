@@ -1,11 +1,21 @@
 # Workshop Contract Testing
 
+Demo project for demonstrating the functionality and power of contract testing.
+
+Contract testing is done with [Pact](https://docs.pact.io/).
+
+## Requirements
+
+This demo contains a [Vagrant](https://www.vagrantup.com/) + [Docker](https://docs.docker.com/compose/) setup. Docker native (without Vagrant) may work but is not really supported.
+
 ## Installation
 
     vagrant up
     vagrant ssh
     cd /vagrant
     ./bin/install
+    
+**Joining the workshop? Then stop reading and look forward to the upcoming [Symfony Live Berlin 2018](http://berlin2018.live.symfony.com/workshops) :)**
     
 ## Start/stop environment
 
@@ -35,7 +45,7 @@ For running the tests the complete environment has to be started.
     
 Afterwards you have to jump in the according service for executing the tests
 
-    ./bin/enter frontend bash
+    ./bin/enter frontend
     
 ### Frontend
 
@@ -65,14 +75,6 @@ Provider Test:
 
     ./bin/phpunit
     
-Triggers
-    
-    '/code/vendor/pact-foundation/pact-php/src/PhpPact/Standalone/Installer/../../../../pact/bin/pact-provider-verifier' 'http://pact-broker/pacts/provider/user/consumer/frontend/version/1.0.0' '--provider-base-url=http://user' '--provider-app-version=1.0.0' '--publish-verification-results'
-
-Equals to
-
-    /code/vendor/pact-foundation/pact-php/pact/bin/pact-provider-verifier http://pact-broker/pacts/provider/user/consumer/frontend/version/1.0.0 --provider-base-url=http://user --provider-app-version=1.0.0 --publish-verification-results
-
 ### RecipeSearch Service
 
 * [http://192.168.33.10:8083/api](http://192.168.33.10:8083/api)
@@ -95,13 +97,3 @@ Equals to
 
 
     http://192.168.33.10:8888
-
-# Cheatsheet
-
-    time bin/phpunit --testsuite "Pact Consumer Test Suite"
-
-    curl -H "X-Pact-Mock-Service: true" http://192.168.33.10:8082/interactions/verification
-    
-    curl -X POST -H "X-Pact-Mock-Service: true" -H "Content-Type: application/json" -d '{"consumer" : {"name": "dummy"}, "provider": {"name": "user"}}' \http://192.168.33.10:8082/pact
-    
-    curl -X POST -H "X-Pact-Mock-Service: true" -H "Content-Length: 0" http://192.168.33.10:8082/pact
