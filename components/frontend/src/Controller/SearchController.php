@@ -10,7 +10,7 @@ class SearchController extends AbstractController
 {
     public function index(RecipeSearchRepository $repository, Request $request)
     {
-        $needle = $request->query->get('s', 'chefkoch');
+        $needle = $request->query->get('needle', 'chefkoch');
 
         $recipes = $repository->findLatest(['limit' => 5, 'needle' => $needle]);
 

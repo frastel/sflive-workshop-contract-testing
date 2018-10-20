@@ -1,0 +1,47 @@
+{
+  "description": "recipes with term lorem",
+  "provider_state": "searching for recipes containing term lorem",
+  "request": {
+    "method": "GET",
+    "path": "/api",
+    "query": {
+      "limit": "5",
+      "needle": "lorem"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": [
+      {
+        "id": 11,
+        "title": "lorem recipe #1",
+        "subtitle": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore ma",
+        "rating": 4.5,
+        "instructions": "Irgendwas mit den Zutaten machen ...",
+        "published": "2017-12-24 20:00:00",
+        "authorName": "Chefkoch",
+        "authorId": 1,
+        "preparationTime": 10,
+        "difficulty": "expert",
+        "image": ""
+      },
+      {
+        "id": 12,
+        "title": "lorem recipe #2",
+        "subtitle": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed",
+        "rating": 4.5,
+        "instructions": "Irgendwas mit den Zutaten machen ...",
+        "published": "2017-12-24 20:00:00",
+        "authorName": "Chefkoch",
+        "authorId": 1,
+        "preparationTime": 10,
+        "difficulty": "expert",
+        "image": ""
+      }
+    ]
+  }
+}
+
