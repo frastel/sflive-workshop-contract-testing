@@ -14,6 +14,7 @@
     "require-dev": {
         "pact-foundation/pact-php": "dev-master",
         "symfony/dotenv": "*",
+        "symfony/profiler-pack": "^1.0",
         "symfony/test-pack": "^1.0"
     },
     "config": {
