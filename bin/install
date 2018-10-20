@@ -1,7 +1,7 @@
 #!/bin/bash
 
-./bin/composer install frontend
-./bin/composer install recipe
-./bin/composer install user
-./bin/composer install recipe-detail
-./bin/composer install recipe-search
+./bin/composer install frontend --no-interaction
+./bin/composer install recipe --no-interaction
+./bin/composer install user --no-interaction
+./bin/composer install recipe-detail --no-interaction
+./bin/composer install recipe-search --no-interaction
