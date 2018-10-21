@@ -2,18 +2,18 @@
 
 namespace App\Controller;
 
-use App\Repository\RecipeRepository;
-use App\Repository\UserRepository;
+use App\Gateway\RecipeGateway;
+use App\Gateway\UserGateway;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class AggregationController extends AbstractController
 {
-    public function recipe(RecipeRepository $recipeRepository, UserRepository $userRepository, $id)
+    public function recipe(RecipeGateway $recipeGateway, UserGateway $userGateway, $id)
     {
-        $recipe = $recipeRepository->findById($id);
-        $user = $userRepository->findById($id);
+        $recipe = $recipeGateway->findById($id);
+        $user = $userGateway->findById($id);
 
         if (!$recipe) {
             throw new NotFoundHttpException("recipe ${id} not found");

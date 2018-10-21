@@ -2,15 +2,15 @@
 
 namespace App\Controller;
 
-use App\Repository\RecipeSearchRepository;
+use App\Gateway\RecipeSearchGateway;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController
 {
-    public function index(RecipeSearchRepository $repository, Request $request)
+    public function index(RecipeSearchGateway $gateway, Request $request)
     {
-        $recipes = $repository->findLatest(['limit' => 5]);
+        $recipes = $gateway->findLatest(['limit' => 5]);
 
         // replace this example code with whatever you need
         return $this->render('home/index.html.twig', [

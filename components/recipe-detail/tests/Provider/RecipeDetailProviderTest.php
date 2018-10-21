@@ -12,6 +12,10 @@ use PHPUnit\Framework\TestCase;
  */
 class RecipeDetailProviderTest extends TestCase
 {
+    /**
+     * @throws \PhpPact\Standalone\Installer\Exception\FileDownloadFailureException
+     * @throws \PhpPact\Standalone\Installer\Exception\NoDownloaderFoundException
+     */
     public function testProviderDoesNotBreakThings()
     {
         $config = new VerifierConfig();

@@ -12,6 +12,10 @@ use PHPUnit\Framework\TestCase;
  */
 class RecipeProviderTest extends TestCase
 {
+    /**
+     * @throws \PhpPact\Standalone\Installer\Exception\FileDownloadFailureException
+     * @throws \PhpPact\Standalone\Installer\Exception\NoDownloaderFoundException
+     */
     public function testProviderDoesNotBreakThings()
     {
         $this->markTestSkipped('This test needs to be enabled.');

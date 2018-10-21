@@ -3,7 +3,7 @@
 namespace App\Tests\Consumer;
 
 use App\Entity\Recipe;
-use App\Repository\RecipeRepository;
+use App\Gateway\RecipeGateway;
 use PhpPact\Consumer\InteractionBuilder;
 use PhpPact\Consumer\Matcher\Matcher;
 use PhpPact\Consumer\Model\ConsumerRequest;
@@ -14,8 +14,12 @@ use PHPUnit\Framework\TestCase;
 /**
  * @group contract-consumer
  */
-class RecipeRepositoryTest extends TestCase
+class RecipeGatewayTest extends TestCase
 {
+    /**
+     * @throws \PhpPact\Standalone\Exception\MissingEnvVariableException
+     * @throws \Exception
+     */
     public function testSearchRecipes()
     {
         $matcher = new Matcher();
@@ -60,8 +64,8 @@ class RecipeRepositoryTest extends TestCase
 
         //$uri = str_replace('0.0.0.0', '127.0.0.1', $config->getBaseUri());
 
-        $repository = new RecipeRepository($config->getBaseUri()); // Pass in the URL to the Mock Server.
-        $result = $repository->findById(1); // Make the real API request against the Mock Server.
+        $gateway = new RecipeGateway($config->getBaseUri()); // Pass in the URL to the Mock Server.
+        $result = $gateway->findById(1); // Make the real API request against the Mock Server.
 
         $builder->verify(); // This will verify that the interactions took place.
 

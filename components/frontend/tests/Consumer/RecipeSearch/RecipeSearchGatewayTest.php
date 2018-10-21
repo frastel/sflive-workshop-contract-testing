@@ -3,19 +3,24 @@
 namespace App\Tests\Consumer;
 
 use App\Entity\RecipeSearch;
-use App\Repository\RecipeSearchRepository;
+use App\Gateway\RecipeSearchGateway;
 use PhpPact\Consumer\InteractionBuilder;
 use PhpPact\Consumer\Matcher\Matcher;
 use PhpPact\Consumer\Model\ConsumerRequest;
 use PhpPact\Consumer\Model\ProviderResponse;
+use PhpPact\Standalone\Exception\MissingEnvVariableException;
 use PhpPact\Standalone\MockService\MockServerEnvConfig;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @group contract-consumer
  */
-class RecipeSearchRepositoryTest extends TestCase
+class RecipeSearchGatewayTest extends TestCase
 {
+    /**
+     * @throws MissingEnvVariableException
+     * @throws \Exception
+     */
     public function testSearchRecipes()
     {
         $matcher = new Matcher();
@@ -62,8 +67,8 @@ class RecipeSearchRepositoryTest extends TestCase
                 $response
             ); // This has to be last. This is what makes an API request to the Mock Server to set the interaction.
 
-        $repository = new RecipeSearchRepository($config->getBaseUri()); // Pass in the URL to the Mock Server.
-        $result = $repository->findLatest([]); // Make the real API request against the Mock Server.
+        $gateway = new RecipeSearchGateway($config->getBaseUri()); // Pass in the URL to the Mock Server.
+        $result = $gateway->findLatest([]); // Make the real API request against the Mock Server.
 
         $builder->verify(); // This will verify that the interactions took place.
 

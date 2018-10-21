@@ -2,16 +2,16 @@
 
 namespace App\Controller;
 
-use App\Repository\RecipeDetailRepository;
+use App\Gateway\RecipeDetailGateway;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class RecipeDetailController extends AbstractController
 {
-    public function detail(RecipeDetailRepository $repository, $id)
+    public function detail(RecipeDetailGateway $gateway, $id)
     {
         try {
-            $recipe = $repository->findById($id);
+            $recipe = $gateway->findById($id);
         } catch (\InvalidArgumentException $e) {
             throw new NotFoundHttpException("recipe ${id} not found");
         }

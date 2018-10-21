@@ -3,6 +3,8 @@
 namespace App\Tests;
 
 use GuzzleHttp\Psr7\Uri;
+use PhpPact\Standalone\Installer\Exception\FileDownloadFailureException;
+use PhpPact\Standalone\Installer\Exception\NoDownloaderFoundException;
 use PhpPact\Standalone\ProviderVerifier\Model\VerifierConfig;
 use PhpPact\Standalone\ProviderVerifier\Verifier;
 use PHPUnit\Framework\TestCase;
@@ -12,6 +14,10 @@ use PHPUnit\Framework\TestCase;
  */
 class RecipeSearchProviderTest extends TestCase
 {
+    /**
+     * @throws FileDownloadFailureException
+     * @throws NoDownloaderFoundException
+     */
     public function testProviderDoesNotBreakThings()
     {
         $config = new VerifierConfig();

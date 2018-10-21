@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repository;
+namespace App\Gateway;
 
 use App\Entity\User;
 
-class UserRepository extends Repository
+class UserGateway extends Gateway
 {
     /**
      * @var string
@@ -12,7 +12,7 @@ class UserRepository extends Repository
     private $baseUri;
 
     /**
-     * RecipeSearchRepository constructor.
+     * RecipeSearchGateway constructor.
      *
      * @param string $baseUri
      */

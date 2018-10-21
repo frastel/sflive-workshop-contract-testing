@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace App\Gateway;
 
-class Repository
+class Gateway
 {
     protected function fetch($url)
     {

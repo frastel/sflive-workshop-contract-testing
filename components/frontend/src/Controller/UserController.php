@@ -2,16 +2,16 @@
 
 namespace App\Controller;
 
-use App\Repository\UserRepository;
+use App\Gateway\UserGateway;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class UserController extends AbstractController
 {
-    public function detail(UserRepository $repository, $id)
+    public function detail(UserGateway $gateway, $id)
     {
         try {
-            $user = $repository->findById($id);
+            $user = $gateway->findById($id);
         } catch (\InvalidArgumentException $e) {
             throw new NotFoundHttpException("user ${id} not found");
         }

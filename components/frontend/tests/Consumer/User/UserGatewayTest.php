@@ -3,19 +3,24 @@
 namespace App\Tests\Consumer;
 
 use App\Entity\User;
-use App\Repository\UserRepository;
+use App\Gateway\UserGateway;
 use PhpPact\Consumer\InteractionBuilder;
 use PhpPact\Consumer\Matcher\Matcher;
 use PhpPact\Consumer\Model\ConsumerRequest;
 use PhpPact\Consumer\Model\ProviderResponse;
+use PhpPact\Standalone\Exception\MissingEnvVariableException;
 use PhpPact\Standalone\MockService\MockServerEnvConfig;
 use PHPUnit\Framework\TestCase;
 
 /**
  * @group contract-consumer
  */
-class UserRepositoryTest extends TestCase
+class UserGatewayTest extends TestCase
 {
+    /**
+     * @throws MissingEnvVariableException
+     * @throws \Exception
+     */
     public function testSearchRecipes()
     {
         $matcher = new Matcher();
@@ -53,8 +58,8 @@ class UserRepositoryTest extends TestCase
                 $response
             ); // This has to be last. This is what makes an API request to the Mock Server to set the interaction.
 
-        $repository = new UserRepository($config->getBaseUri()); // Pass in the URL to the Mock Server.
-        $result = $repository->findById(1); // Make the real API request against the Mock Server.
+        $gateway = new UserGateway($config->getBaseUri()); // Pass in the URL to the Mock Server.
+        $result = $gateway->findById(1); // Make the real API request against the Mock Server.
 
         $builder->verify(); // This will verify that the interactions took place.
 
