@@ -10,10 +10,12 @@ This demo contains a [Vagrant](https://www.vagrantup.com/) + [Docker](https://do
 
 ## Installation
 
-    vagrant up
-    vagrant ssh
-    cd /vagrant
-    ./bin/install
+    
+    @host:$ vagrant up
+    @host:$ vagrant ssh
+    
+    @guest:$ cd /vagrant
+    @guest:$ ./bin/install
     
 **Joining the workshop? Then stop reading and look forward to the upcoming [Symfony Live Berlin 2018](http://berlin2018.live.symfony.com/workshops) :)**
     
@@ -21,11 +23,11 @@ This demo contains a [Vagrant](https://www.vagrantup.com/) + [Docker](https://do
 
 Start
 
-    ./bin/start
+    @guest:$ ./bin/start
     
 Stop
 
-    ./bin/stop
+    @guest:$ ./bin/stop
     
 ## Project Overview
 
@@ -41,11 +43,11 @@ Services:
 
 For running the tests the complete environment has to be started.
 
-    ./bin/start
+    @guest:$ ./bin/start
     
 Afterwards you have to jump in the according service for executing the tests
 
-    ./bin/enter frontend
+    @guest:$ ./bin/enter frontend
     
 ### Frontend
 
@@ -53,9 +55,9 @@ Afterwards you have to jump in the according service for executing the tests
 
 Consumer Tests:
 
-    ./bin/phpunit-contract-consumer-user
-    ./bin/phpunit-contract-consumer-recipe-detail
-    ./bin/phpunit-contract-consumer-recipe-search
+    @container:$ ./bin/phpunit-contract-consumer-user
+    @container:$ ./bin/phpunit-contract-consumer-recipe-detail
+    @container:$ ./bin/phpunit-contract-consumer-recipe-search
 
 ### Recipe Service
 
@@ -73,7 +75,7 @@ Consumer Tests:
     
 Provider Test:
 
-    ./bin/phpunit
+    @container:$ ./bin/phpunit
     
 ### RecipeSearch Service
 
