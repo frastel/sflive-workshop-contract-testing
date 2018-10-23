@@ -1,0 +1,50 @@
+{
+  "consumer": {
+    "name": "frontend"
+  },
+  "provider": {
+    "name": "user"
+  },
+  "interactions": [
+    {
+      "description": "user data",
+      "providerState": "user with #1 exists",
+      "request": {
+        "method": "GET",
+        "path": "/api/users/1"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "id": 13,
+          "name": "Chefkoch",
+          "about": "text",
+          "registered": 13
+        },
+        "matchingRules": {
+          "$.body.id": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          },
+          "$.body.about": {
+            "match": "type"
+          },
+          "$.body.registered": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  },
+  "createdAt": "2018-10-23T20:15:30+00:00"
+}
