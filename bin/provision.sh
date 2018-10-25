@@ -30,3 +30,4 @@ curl -sL "https://github.com/docker/compose/releases/download/1.22.0/docker-comp
 
 echo "Provisioning done!"
 
+echo '{"dns":["10.240.0.100"]}' >> /etc/docker/daemon.json
