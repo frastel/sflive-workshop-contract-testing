@@ -1,5 +1,11 @@
 #!/bin/bash
 
+exists=`docker images | grep moby-dick`
+
+if [ -z "$exists" ]; then
+    docker build -t workshop/moby-dick components/moby-dick
+fi
+
 cmd=${1:-install}
 app=${2:-frontend}
 
@@ -15,4 +21,4 @@ docker run --rm -ti \
     -v $(pwd)/components/${app}:/code \
     -v $(pwd)/.composer:/composer \
     -u $(id -u):$(id -g) \
-    composer:1.7.2 $cmd $what
+    workshop/moby-dick composer $cmd $what

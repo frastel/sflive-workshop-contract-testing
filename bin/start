@@ -3,4 +3,6 @@
 # workaround: file looses the mod sometimes
 chmod 666 components/pact-broker/pact_broker.sqlite
 
+# "--build --force-recreate" rebuilds the complete environment again
+# if you don't need this mechanism remove those params!
 docker-compose up -d --build --force-recreate

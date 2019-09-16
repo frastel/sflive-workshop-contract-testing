@@ -19,14 +19,14 @@ add-apt-repository \
 
 apt-get update
 
-apt-get install -yq docker-ce=18.03.1~ce~3-0~ubuntu
+apt-get install -yq docker-ce docker-ce-cli containerd.io
 
 # Step 2: pre-installation steps for Docker on linux
 groupadd docker
 usermod -aG docker vagrant
 
 # Step 3: docker-compose installation
-curl -sL "https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
+curl -sL "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && chmod +x /usr/local/bin/docker-compose
 
 echo "Provisioning done!"
 

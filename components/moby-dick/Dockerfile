@@ -1,6 +1,9 @@
-FROM ubuntu:18.10
+FROM debian:10
 
 ENV DEBIAN_FRONTEND noninteractive
+
+RUN echo 'Europe/Berlin' > /etc/timezone && dpkg-reconfigure tzdata
+RUN echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01recommends
 
 # upgrade system
 RUN apt-get update \
@@ -12,26 +15,26 @@ RUN apt-get update \
     curl \
     git \
     unzip \
-    php7.2-cli \
-    php7.2-fpm \
-    php7.2-intl \
-    php7.2-mysql  \
-    php7.2-sqlite3\
-    php7.2-curl \
-    php7.2-gd \
-    php7.2-xml \
-    php7.2-mbstring \
-    php7.2-zip \
+    php7.3-cli \
+    php7.3-fpm \
+    php7.3-intl \
+    php7.3-mysql  \
+    php7.3-sqlite3\
+    php7.3-curl \
+    php7.3-gd \
+    php7.3-xml \
+    php7.3-mbstring \
+    php7.3-zip \
     nginx-full \
     supervisor \
-    mysql-client \
+    default-mysql-client \
     --no-install-recommends && \
     apt-get clean && apt-get purge && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN sed -i "s@doc_root =@doc_root =/code/public@" /etc/php/7.2/fpm/php.ini && \
-    sed -i "s@;error_log = php_errors.log@error_log = /proc/self/fd/2@" /etc/php/7.2/fpm/php.ini && \
-    echo "date.timezone = Europe/Paris" >> /etc/php/7.2/cli/php.ini && \
-    echo "date.timezone = Europe/Paris" >> /etc/php/7.2/fpm/php.ini && \
+RUN sed -i "s@doc_root =@doc_root =/code/public@" /etc/php/7.3/fpm/php.ini && \
+    sed -i "s@;error_log = php_errors.log@error_log = /proc/self/fd/2@" /etc/php/7.3/fpm/php.ini && \
+    echo "date.timezone = Europe/Paris" >> /etc/php/7.3/cli/php.ini && \
+    echo "date.timezone = Europe/Paris" >> /etc/php/7.3/fpm/php.ini && \
     echo "daemon off;" >> /etc/nginx/nginx.conf && \
     mkdir /run/php && chown www-data:www-data /run/php
 
