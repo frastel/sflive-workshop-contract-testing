@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -f build/contracts.log
+
 # frontend: consumer tests
 echo "======================================================================"
 echo "===================== frontend: consumer tests ======================="

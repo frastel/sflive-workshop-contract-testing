@@ -3,3 +3,7 @@
 PACT_PROVIDER_NAME=user bin/phpunit \
     --testsuite "User Test Suite" \
     --configuration phpunit.consumer.xml
+
+res=$?
+
+echo "recipe-detail->user: $res" >> /build/contracts.log

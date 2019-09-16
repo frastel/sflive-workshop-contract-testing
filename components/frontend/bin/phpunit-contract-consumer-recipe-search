@@ -3,3 +3,7 @@
 PACT_PROVIDER_NAME=recipe-search bin/phpunit \
     --testsuite "RecipeSearch Test Suite" \
     --configuration phpunit.consumer.xml
+
+res=$?
+
+echo "frontend->recipe-search: $res" >> /build/contracts.log

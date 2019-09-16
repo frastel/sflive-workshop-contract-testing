@@ -3,3 +3,7 @@
 time bin/phpunit \
     --group contract-provider \
     --configuration phpunit.xml.dist
+
+res=$?
+
+echo "recipe-search: $res" >> /build/contracts.log

@@ -3,3 +3,7 @@
 bin/phpunit \
     --group contract-provider \
     --configuration phpunit.xml.dist
+
+res=$?
+
+echo "recipe-detail: $res" >> /build/contracts.log

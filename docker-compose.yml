@@ -20,8 +20,9 @@ services:
       - ./components/frontend:/code
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
+      - ./build/:/build
     environment:
-      - SYMFONY_PHPUNIT_VERSION=7.1
+      - SYMFONY_PHPUNIT_VERSION=7.5
 
   recipe:
     build: ./components/moby-dick
@@ -32,8 +33,9 @@ services:
       - ./components/recipe:/code
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
+      - ./build/:/build
     environment:
-      - SYMFONY_PHPUNIT_VERSION=7.1
+      - SYMFONY_PHPUNIT_VERSION=7.5
 
   user:
     build: ./components/moby-dick
@@ -44,8 +46,9 @@ services:
       - ./components/user:/code
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
+      - ./build/:/build
     environment:
-      - SYMFONY_PHPUNIT_VERSION=7.1
+      - SYMFONY_PHPUNIT_VERSION=7.5
 
   recipe-search:
     build: ./components/moby-dick
@@ -56,8 +59,9 @@ services:
       - ./components/recipe-search:/code
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
+      - ./build/:/build
     environment:
-      - SYMFONY_PHPUNIT_VERSION=7.1
+      - SYMFONY_PHPUNIT_VERSION=7.5
 
   recipe-detail:
     build: ./components/moby-dick
@@ -68,5 +72,6 @@ services:
       - ./components/recipe-detail:/code
       - /etc/passwd:/etc/passwd:ro
       - /etc/group:/etc/group:ro
+      - ./build/:/build
     environment:
-      - SYMFONY_PHPUNIT_VERSION=7.1
+      - SYMFONY_PHPUNIT_VERSION=7.5
