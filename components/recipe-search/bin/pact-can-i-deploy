@@ -1,0 +1,5 @@
+#!/bin/bash
+
+version=${1:-1.0.0}
+
+vendor/pact-foundation/pact-php/pact/bin/pact-broker can-i-deploy --pacticipant ${PACTICIPANT} --version 1.0.0 --to prod --broker-base-url=http://pact-broker:9292

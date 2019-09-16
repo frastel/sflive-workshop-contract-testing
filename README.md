@@ -99,3 +99,7 @@ Provider Test:
 
 
     http://192.168.33.10:8888
+    
+From any service within the environment the broker is available under
+
+    http://pact-broker:9292

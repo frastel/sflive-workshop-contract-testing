@@ -2,9 +2,9 @@ version: '3'
 services:
 
   pact-broker:
-    image: dius/pact-broker
+    image: pactfoundation/pact-broker
     ports:
-      - "8888:80"
+      - "8888:9292"
     volumes:
       - ./components/pact-broker/pact_broker.sqlite:/tmp/pact_broker.sqlite
     environment:
@@ -23,6 +23,7 @@ services:
       - ./build/:/build
     environment:
       - SYMFONY_PHPUNIT_VERSION=7.5
+      - PACTICIPANT=frontend
 
   recipe:
     build: ./components/moby-dick
@@ -36,6 +37,7 @@ services:
       - ./build/:/build
     environment:
       - SYMFONY_PHPUNIT_VERSION=7.5
+      - PACTICIPANT=recipe
 
   user:
     build: ./components/moby-dick
@@ -49,6 +51,7 @@ services:
       - ./build/:/build
     environment:
       - SYMFONY_PHPUNIT_VERSION=7.5
+      - PACTICIPANT=user
 
   recipe-search:
     build: ./components/moby-dick
@@ -62,6 +65,7 @@ services:
       - ./build/:/build
     environment:
       - SYMFONY_PHPUNIT_VERSION=7.5
+      - PACTICIPANT=recipe-search
 
   recipe-detail:
     build: ./components/moby-dick
@@ -75,3 +79,4 @@ services:
       - ./build/:/build
     environment:
       - SYMFONY_PHPUNIT_VERSION=7.5
+      - PACTICIPANT=recipe-detail

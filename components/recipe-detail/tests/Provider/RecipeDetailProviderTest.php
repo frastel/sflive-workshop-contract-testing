@@ -23,7 +23,7 @@ class RecipeDetailProviderTest extends TestCase
             ->setProviderName('recipe-detail') // Providers name to fetch.
             ->setProviderVersion('1.0.0')
             ->setProviderBaseUrl(new Uri('http://recipe-detail')) // URL of the Provider.
-            ->setBrokerUri(new Uri('http://pact-broker')) // URL of the Pact Broker to publish results.
+            ->setBrokerUri(new Uri('http://pact-broker:9292')) // URL of the Pact Broker to publish results.
             ->setPublishResults(true) // Flag the verifier service to publish the results to the Pact Broker.
             ->setProcessTimeout(60)
             ->setProcessIdleTimeout(20);

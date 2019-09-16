@@ -25,7 +25,7 @@
         <env name="PACT_CONSUMER_TAG" value="master"/>
         <env name="PACT_OUTPUT_DIR" value="/tmp/pact-output"/>
         <env name="PACT_MOCK_SERVER_HEALTH_CHECK_TIMEOUT" value="20"/>
-        <env name="PACT_BROKER_URI" value="http://pact-broker"/>
+        <env name="PACT_BROKER_URI" value="http://pact-broker:9292"/>
 
         <env name="PACT_CONSUMER_NAME" value="frontend"/>
         <!-- <env name="PACT_PROVIDER_NAME" value="recipe-search"/> -->

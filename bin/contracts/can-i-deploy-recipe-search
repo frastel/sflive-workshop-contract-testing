@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose exec recipe-search bin/pact-can-i-deploy

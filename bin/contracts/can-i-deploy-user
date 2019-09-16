@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker-compose exec user bin/pact-can-i-deploy

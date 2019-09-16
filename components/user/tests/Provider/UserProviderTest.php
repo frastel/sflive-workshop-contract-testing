@@ -31,7 +31,7 @@ class UserProviderTest extends TestCase
             ->setProviderName('user') // Providers name to fetch.
             ->setProviderVersion('1.0.0')
             ->setProviderBaseUrl(new Uri('http://user')) // URL of the Provider.
-            ->setBrokerUri(new Uri('http://pact-broker')) // URL of the Pact Broker to publish results.
+            ->setBrokerUri(new Uri('http://pact-broker:9292')) // URL of the Pact Broker to publish results.
             ->setPublishResults(true) // Flag the verifier service to publish the results to the Pact Broker.
             ->setProcessTimeout(60)
             ->setProcessIdleTimeout(20)

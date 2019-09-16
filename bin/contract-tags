@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker-compose exec frontend bin/pact-broker-tag
+docker-compose exec recipe-detail bin/pact-broker-tag
+docker-compose exec recipe bin/pact-broker-tag
+docker-compose exec user bin/pact-broker-tag
+docker-compose exec recipe-search bin/pact-broker-tag
