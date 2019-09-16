@@ -1,3 +1,7 @@
 recipe:
     path: /api/recipes/{id}
     controller: App\Controller\RecipeController::find
+
+dev-provider-state:
+    path: /api/recipes/dev/provider-state
+    controller: App\Controller\DevController::providerState
