@@ -2,6 +2,10 @@ search:
     path: /api
     controller: App\Controller\SearchController::index
 
+dev-provider-state:
+    path: /api/dev/provider-state
+    controller: App\Controller\DevController::providerState
+
 alias:
     path: /
     controller: App\Controller\SearchController::index

@@ -60,7 +60,7 @@ class RecipeSearchGatewayTest extends TestCase
         $config = new MockServerEnvConfig();
         $builder = new InteractionBuilder($config);
         $builder
-            ->given('searching for all recipes')
+            ->given('search data for recipes are loaded')
             ->uponReceiving('all found recipe data')
             ->with($request)
             ->willRespondWith(

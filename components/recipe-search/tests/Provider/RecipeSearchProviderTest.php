@@ -28,7 +28,8 @@ class RecipeSearchProviderTest extends TestCase
             ->setBrokerUri(new Uri('http://pact-broker:9292')) // URL of the Pact Broker to publish results.
             ->setPublishResults(true) // Flag the verifier service to publish the results to the Pact Broker.
             ->setProcessTimeout(60)
-            ->setProcessIdleTimeout(20);
+            ->setProcessIdleTimeout(20)
+            ->setProviderStatesSetupUrl('http://recipe-search/api/dev/provider-state');
 
         // Verify that all consumers of 'someProvider' are valid.
         $verifier = new Verifier($config);
