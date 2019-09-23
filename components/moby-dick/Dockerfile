@@ -25,6 +25,7 @@ RUN apt-get update \
     php7.3-xml \
     php7.3-mbstring \
     php7.3-zip \
+    php7.3-xdebug \
     nginx-full \
     supervisor \
     default-mysql-client \
@@ -37,6 +38,8 @@ RUN sed -i "s@doc_root =@doc_root =/code/public@" /etc/php/7.3/fpm/php.ini && \
     echo "date.timezone = Europe/Paris" >> /etc/php/7.3/fpm/php.ini && \
     echo "daemon off;" >> /etc/nginx/nginx.conf && \
     mkdir /run/php && chown www-data:www-data /run/php
+
+RUN phpdismod -v 7.3 -s ALL opcache && phpenmod -v 7.3 -s ALL xdebug
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --preview
 

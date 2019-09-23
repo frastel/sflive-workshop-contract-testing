@@ -103,3 +103,10 @@ Provider Test:
 From any service within the environment the broker is available under
 
     http://pact-broker:9292
+
+
+## Debugging
+
+    export XDEBUG_CONFIG="idekey=PHPSTORM"
+    export PHP_IDE_CONFIG="serverName=recipe-search.workshop"
+    bin/phpunit ...
