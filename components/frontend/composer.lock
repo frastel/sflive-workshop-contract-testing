@@ -3331,7 +3331,7 @@
                 "amphp/process": "^1.1.0",
                 "amphp/socket": "^0.10.9",
                 "composer/semver": "^1.4.2",
-                "ext-openssl": "*",RecipeDetailProviderTest
+                "ext-openssl": "*",
                 "guzzlehttp/guzzle": "^6.3",
                 "php": "^7.1"
             },
