@@ -49,6 +49,8 @@ class RecipeSearchGatewayTest extends TestCase
                         'published' => $matcher->term('2017-12-24 20:00:00', $dateTimeTerm),
                         'authorName' => $matcher->like('Chefkoch'),
                         'authorId' => $matcher->integer(1),
+                        // oops, someone could not type correctly ...
+                        //'preparationTime' => $matcher->integer(1),
                         'praparationTime' => $matcher->integer(1),
                         'difficulty' => $matcher->term('simple', '(simple|advanced|expert)'),
                         'image' => $matcher->like('spiegeleier.jpeg'),
