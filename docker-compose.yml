@@ -12,8 +12,7 @@ services:
       - PACT_BROKER_DATABASE_NAME=/tmp/pact_broker.sqlite
 
   frontend:
-    build: ./components/moby-dick
-    image: workshop/moby-dick
+    image: frastel/moby-dick:symfony4
     ports:
       - "8080:80"
     volumes:
@@ -26,8 +25,7 @@ services:
       - PACTICIPANT=frontend
 
   recipe:
-    build: ./components/moby-dick
-    image: workshop/moby-dick
+    image: frastel/moby-dick:symfony4
     ports:
       - "8081:80"
     volumes:
@@ -40,8 +38,7 @@ services:
       - PACTICIPANT=recipe
 
   user:
-    build: ./components/moby-dick
-    image: workshop/moby-dick
+    image: frastel/moby-dick:symfony4
     ports:
       - "8082:80"
     volumes:
@@ -54,8 +51,7 @@ services:
       - PACTICIPANT=user
 
   recipe-search:
-    build: ./components/moby-dick
-    image: workshop/moby-dick
+    image: frastel/moby-dick:symfony4
     ports:
       - "8083:80"
     volumes:
@@ -68,8 +64,7 @@ services:
       - PACTICIPANT=recipe-search
 
   recipe-detail:
-    build: ./components/moby-dick
-    image: workshop/moby-dick
+    image: frastel/moby-dick:symfony4
     ports:
       - "8084:80"
     volumes:

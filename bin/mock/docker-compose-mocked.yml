@@ -14,7 +14,7 @@ services:
       - PACT_BROKER_DATABASE_NAME=/tmp/pact_broker.sqlite
 
   frontend:
-    build: ./../../components/moby-dick
+    image: frastel/moby-dick:symfony4
     ports:
       - "8080:80"
     volumes:
